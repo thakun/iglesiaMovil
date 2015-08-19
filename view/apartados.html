@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/index.js"></script>
+    <script src="../js/apartados.js"></script>
+    <script src="../js/jquery.mobile-1.4.5.min.js"></script>
+    <link rel="stylesheet" href="../css/jquery.mobile-1.4.5.min.css">
+    <title></title>
+</head>
+<body>
+<div data-role="page" id="pag2">
+
+    <div data-role="header" data-position="fixed">
+        <h1>Apartar eventos</h1>
+    </div>
+
+    <div id="background" class="ui-content">
+
+        <div class="columns">
+            <div class="column1">
+                <div>
+                    <input type="date" id="fecha"/>
+                    <button id="btnSearch" class="">Buscar</button>
+                    <div class="hor">
+
+                    </div>
+                </div>
+                <div>
+                </div>
+            </div>
+            <div class="column2">
+                <form class="form1">
+                    <input type="text" id="name" placeholder="Nombre"><br/><br/>
+                    <input type="text" id="lastname" placeholder="Apellidos"><br/><br/>
+                    <input type="text" id="address" placeholder="Direccion"><br/><br/>
+                    <input type="email" id="mail" placeholder="email"><br/><br/>
+                    <select name="adicionales" id="adc"><option value="0" disabled>Selecciona un valor</option> </select><br/><br/>
+                    <textarea id="descripcion" rows="4" cols="50" placeholder="Motivo del evento"></textarea><br/><br/>
+                    <input type="button" id="btnEvent" value="Siguiente">
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+    <div data-role="footer" data-theme="a" data-position="fixed" data-fullscreen="true">
+        <h1>T</h1>
+    </div>
+</div>
+</body>
+</html>
