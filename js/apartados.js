@@ -6,7 +6,7 @@ var adicionales = function () {
 
     $.ajax({
         type: "POST",
-        url: "http://192.168.1.74/iglesia/Server/conexionClienteServidor.php",
+        url: "http://192.168.33.51/iglesia/Server/conexionClienteServidor.php",
         data: {style:2,class:"Adicionales",function:"mostrarAdicionales",data : jsonString},
         cache: false,
 
@@ -42,7 +42,7 @@ var showDisponibilidad = function (fecha) {
 
     $.ajax({
         type: "POST",
-        url: "http://192.168.1.74/iglesia/Server/conexionClienteServidor.php",
+        url: "http://192.168.33.51/iglesia/Server/conexionClienteServidor.php",
         data: {style:4,class:'Horario',function:'mostrarDisponibilidad',data:jsonString},
         cache: false,
 
@@ -109,7 +109,7 @@ var createPersona = function () {
 
     $.ajax({
         type: "POST",
-        url: "http://192.168.1.74/iglesia/Server/conexionClienteServidor.php",
+        url: "http://192.168.33.51/iglesia/Server/conexionClienteServidor.php",
         data: {style:1,class:'Persona',function:'createPersona',data:jsonString},
         cache: false,
 
@@ -127,7 +127,7 @@ var selectLastPersona = function () {
 
     $.ajax({
         type: "POST",
-        url: "http://192.168.1.74/iglesia/Server/conexionClienteServidor.php",
+        url: "http://192.168.33.51/iglesia/Server/conexionClienteServidor.php",
         data: {style:2,class:'Persona',function:'getLastId',data:jsonString},
         cache: false,
 
@@ -147,7 +147,7 @@ var createEvento = function (id) {
 
     $.ajax({
         type: "POST",
-        url: "http://192.168.1.74/iglesia/Server/conexionClienteServidor.php",
+        url: "http://192.168.33.51/iglesia/Server/conexionClienteServidor.php",
         data: {style:1,class:'Evento',function:'createEvent',data:jsonString},
         cache: false,
 
@@ -165,7 +165,7 @@ var getEventInserted = function () {
 
     $.ajax({
         type: "POST",
-        url: "http://192.168.1.74/iglesia/Server/conexionClienteServidor.php",
+        url: "http://192.168.33.51/iglesia/Server/conexionClienteServidor.php",
         data: {style:2,class:'Evento',function:'loadLastId',data:jsonString},
         cache: false,
 
@@ -176,6 +176,25 @@ var getEventInserted = function () {
     });
 }
 
+var cleanForm = function () {
+    form = $(".form1");
+
+    form.find("input, select, textarea").each(function (index, element, array) {
+        console.log(element);
+        console.log(element.nodeName.toUpperCase())
+        switch(element.nodeName.toUpperCase()){
+            case 'INPUT':
+            case 'TEXTAREA':
+                element.value = "";
+                break;
+            case 'SELECT':
+                element.value = 0;
+                element.text = "Selecciona un valor";
+                console.log(element.value);
+                break;
+        }
+    });
+}
 $(window).ready(function () {
     adicionales();
     $('#btnSearch').click(function () {
@@ -183,7 +202,9 @@ $(window).ready(function () {
     });
 
     $('#btnEvent').click(function () {
-        createPersona();
+        //createPersona();
+        cleanForm();
     });
 
 });
+
