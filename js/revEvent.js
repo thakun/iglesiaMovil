@@ -21,8 +21,14 @@ var getEvents = function (id) {
 
             var res = (JSON.parse(resultado));
             if(res[0].length > 0){
-                console.log(res);
-                window.location.href = "http://192.168.1.74/iglesia/Server/pdf.php?res=" +res;
+                $('#datetime').text(res[0][1] + " " + res[0][8]);
+                $('#name').text(res[0][3] + " " + res[0][4]);
+                $('#mail').text(res[0][6]);
+                $('#add').text(res[0][10]);
+                $('#costo').text(res[0][12]);
+
+                $("#list").css("display","block");
+
             }
         }
 

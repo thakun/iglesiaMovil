@@ -10,14 +10,40 @@
     <title></title>
 </head>
 <body>
+<div data-role="page" id="pag2">
 
-<div style="text-align: center;">
-    <p>Busca y ve el estado de tu evento con el codigo que te fue enviado por correo</p>
-    <label for="cod">Codigo de tu evento</label>
-    <input type="text" id="cod" style=" padding: 10px; font-size: 15px; border-radius: 10px;"/>
+    <div data-role="header" data-position="fixed">
+        <h1>Revisar evento</h1>
+    </div>
 
-    <button id="save" style="width: 150px; padding: 10px; font-size: 15px; border-radius: 10px;">Buscar</button>
+    <div id="background" class="ui-content">
+
+        <div style="text-align: center;">
+            <p>Busca y ve el estado de tu evento con el codigo que te fue enviado por correo</p>
+            <label for="cod">Codigo de tu evento</label>
+            <input type="text" id="cod" style=" padding: 10px; font-size: 15px; border-radius: 10px;"/>
+
+            <button id="save" style="width: 150px; padding: 10px; font-size: 15px; border-radius: 10px; margin: 0 auto;">Buscar</button>
+        </div>
+
+        <ul data-role="listview" data-inset="true" data-divider-theme="a" id="list" style="display: none;">
+                <li data-role="list-divider">Fecha</li>
+                <li id="datetime"></li>
+                <li data-role="list-divider">Nombre</li>
+                <li id="name"></li>
+                <li data-role="list-divider">E-mail</li>
+                <li id="mail"></li>
+                <li data-role="list-divider">Adicional</li>
+                <li id="add"></li>
+                <li data-role="list-divider">Costo</li>
+                <li id="costo"></li>
+
+        </ul>
+    </div>
+
+    <div data-role="footer" data-theme="a" data-position="fixed" data-fullscreen="true">
+        <h1>T</h1>
+    </div>
 </div>
-
 </body>
 </html>
