@@ -189,8 +189,6 @@ var cleanForm = function () {
                 break;
             case 'SELECT':
                 element.value = 0;
-                element.text = "Selecciona un valor";
-                console.log(element.value);
                 break;
         }
     });
