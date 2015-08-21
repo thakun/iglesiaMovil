@@ -13,7 +13,7 @@ var getEvents = function (id) {
 
     $.ajax({
         type: "POST",
-        url: "http://192.168.1.74/iglesia/Server/conexionClienteServidor.php",
+        url: "http://192.168.43.19/iglesia/Server/conexionClienteServidor.php",
         data: {style:3,class:'Evento',function:'getEventById',data:jsonString},
         cache: false,
 
